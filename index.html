@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MQTT JavaScript </title>
+	</head>
+
+	<body>
+
+		<h2 align=center>температура !</h2>
+
+		<h2 id="temp_display">Ждем когда придут данные..</h3>
+	<!--	<h3 id="humidity_display">Waiting for humidity update...</h3>**!-->
+		<h3 id="led_status">ждем ответа от устройства ...</h3>
+
+		<button id="status_button" type="button" onclick="led_toggle();">Click Me to Toggle LED Display!</button> 	
+
+		<!-- Source Paho MQTT Client-->
+		<script src="lib/mqttws31.js"></script>
+		<!-- Our Code Goes Here -->
+		<script src="button_test.js"></script>
+		<script type="text/javascript" src="lib/util.js" >
+</script>
+		<!-- Start it up! -->
+<script type="text/javascript" >
+if ( ! get_cookie ( "username" ) )
+	{
+		var username = prompt ( "введите имя", "" );
+		var password = prompt ( "введите пароль", "" );
+		if ( username && password)  {
+    var current_date = new Date;
+    var cookie_year = current_date.getFullYear ( ) + 1;
+    var cookie_month = current_date.getMonth ( );
+    var cookie_day = current_date.getDate ( );
+    set_cookie ( "username", username, cookie_year, cookie_month, cookie_day );
+	set_cookie ( "password", password, cookie_year, cookie_month, cookie_day );
+  location.reload ();
+  }
+  }
+else {		
+	connect();
+}
+
+</script>
+<!--<?php
+//phpinfo();
+?>
+-->
+	</body>
+</html>
