@@ -83,8 +83,9 @@ var MQTTvalues = [0,0,0];
 		//}
 	//	}
 		myarr=JSON.parse(message.payloadString);
+		datetime=myarr['Time'].split('T');
 
-		temperature_heading.innerHTML = "Время : "+"&nbsp"+myarr['Time'] +"<br> Temperature: " + myarr['DS18B20'].Temperature + " &deg;C";
+		temperature_heading.innerHTML = "День:"+"&nbsp"+datetime[0] +"<br> &nbsp &nbsp"+"Время : "+"&nbsp"+datetime[1] +"&nbsp &nbsp Temperature: " + myarr['DS18B20'].Temperature + " &deg;C";
 	/*} else if (message.destinationName == humidity_topic) {
 		var humidity_heading = document.getElementById("humidity_display");
 		humidity_heading.innerHTML = "Humidity: " + message.payloadString + "%";*/
