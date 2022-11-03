@@ -3,10 +3,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>MQTT JavaScript test</title>
+		<title>MQTT JavaScript </title>
 	</head>
-
-
 
 	<body>
 
@@ -22,11 +20,12 @@
 		<script src="lib/mqttws31.js"></script>
 		<!-- Our Code Goes Here -->
 		<script src="button_test.js"></script>
-		<script type="text/javascript" src="lib/util.js" >
+		<!-- Source Page libcookie https://github.com/UnSstrennen/cookie.js -->
+		<script type="text/javascript" src="lib/cookie.js" >
 </script>
 		<!-- Start it up! -->
 <script type="text/javascript" >
-if ( ! get_cookie ( "username" ) )
+if ( ! getCookie ( "username" ) )
 	{
 		var username = prompt ( "введите имя", "" );
 		var password = prompt ( "введите пароль", "" );
@@ -35,8 +34,8 @@ if ( ! get_cookie ( "username" ) )
     var cookie_year = current_date.getFullYear ( ) + 1;
     var cookie_month = current_date.getMonth ( );
     var cookie_day = current_date.getDate ( );
-    set_cookie ( "username", username, cookie_year, cookie_month, cookie_day );
-	set_cookie ( "password", password, cookie_year, cookie_month, cookie_day );
+    setCookie ( "username", username, cookie_year, cookie_month, cookie_day );
+	setCookie ( "password", password, cookie_year, cookie_month, cookie_day );
   location.reload ();
   }
   }

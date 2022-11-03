@@ -1,7 +1,7 @@
 /*
    Eclipse Paho MQTT-JS Utility
    by Elliot Williams for Hackaday article, 
-*/
+*/ 
 
 // Global variables
 var client       = null;
@@ -19,8 +19,8 @@ var status_topic   = "tele/tasmota_9AD490/LWT";
 function connect(){
 	// Set up the client
 	client = new Paho.MQTT.Client(hostname, Number(port), clientId);
-	client.userName=get_cookie ( "username" );
-	client.password=get_cookie ("password");
+	client.userName=getCookie ( "username" );
+	client.password=getCookie ("password");
 
 	console.info('Connecting to Server: Hostname: ', hostname, 
 			'. Port: ', port, '. Client ID: ', clientId);
